@@ -28,7 +28,7 @@ main_page = 'index.markdown'
 
 set_output(main_page,'w')
 init_page('10 famous tiktokers')
-print('List of 10 most famous tiktokers:')
+print('# List of 10 most famous tiktokers:')
 
 i = 1
 for link in soup.find_all('a'):
