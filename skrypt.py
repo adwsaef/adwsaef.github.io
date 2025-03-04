@@ -3,11 +3,6 @@ import sys
 from bs4 import BeautifulSoup
 import string
 import re
-from duckduckgo_search import DDGS
-
-#results = DDGS().text("who is willsmith", max_results=1)
-#print(results)
-#exit
 
 def set_output(fname, type):
     f = open(fname, type)
@@ -30,9 +25,6 @@ soup = BeautifulSoup(response.text, 'html.parser')
 
 main_page = 'index.markdown'
 
-
-soup = BeautifulSoup(response.text, "html.parser")
-
 set_output(main_page,'w')
 init_page('10 famous tiktokers')
 
@@ -51,14 +43,22 @@ for link in soup.find_all('a'):
         print('Creator tiktok: ' +  '<a href="' + url_link + '">' + url_link + '</a>')
         print('<br>')
         for paragraph in soup.find_all("p"):
-            text = paragraph.get_text(strip=True)  # Remove extra whitespace
+            text = paragraph.get_text(strip=True)
             if (text[:3].lower() == name[:3].lower()):
                 print('<br>')
                 print('<h3>')
                 print(text)
                 print('</h3>')
-                print("\n")  # Separate paragraphs with a newline
+                print("\n")
 
+        for img in soup.find_all("img"):
+            photo_link = img["src"]
+            name_tag = name[:4]
+            if (name_tag == 'mrbe'):
+                name_tag = name[-4:]
+
+            if (name_tag.lower() in photo_link.lower()):
+                print('<img src=" ' + img["src"] + '">')
 
         set_output(main_page,'a')
         i = i + 1
