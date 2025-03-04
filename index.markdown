@@ -1,6 +1,6 @@
 ---
 layout: default
-tittle: list of 10 most famous tik-tokers
+tittle: 10 most famous tiktokers
 ---
 ### 1. [cznburak](./cznburak.html)
 ### 2. [willsmith](./willsmith.html)
@@ -13,5 +13,4 @@ tittle: list of 10 most famous tik-tokers
 ### 9. [charlidamelio](./charlidamelio.html)
 ### 10. [khaby.lame](./khaby.lame.html)
 
-
-xdd0
+xdd1

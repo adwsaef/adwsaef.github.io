@@ -15,6 +15,7 @@ def get_sufix(text):
 def init_page(title):
     print('---')
     print('layout: default')
+    print('tittle: 10 most famous tiktokers')
     print('---')
 
 adress = "https://www.favikon.com/blog/top-10-most-followed-tiktok-influencers"
